@@ -19,8 +19,7 @@ vagrant로 클러스터를 기동하면, 컴퓨터상에 가상 서버 3대가 �
 * Vagrant (https://www.vagrantup.com/)
 * VirtualBox (https://www.virtualbox.org/)
 * kubectl (https://kubernetes.io/docs/tasks/tools/install-kubectl/)
-* git (https://kubernetes.io/docs/tasks/tools/install-kubectl/)
-
+* git (https://www.git-scm.com/downloads)
 
 ## 가상 머신의 호스트 환경
 

@@ -43,7 +43,7 @@ Vagrant와 VirtualBox가 동작하는 OS가 필요하다.
 이 명령어가 실행 중에는 가상 서버의 이미지, 컨테이너 이미지 등 큰 용량의 다운로드가 발생한다. 
 
 ~~~
-git clone -b 1.14 https://github.com/takara9/vagrant-kubernetes
+git clone https://github.com/samaco634/kubenate_em_node3
 cd vagrant-Kubernetes
 vagrant up
 ~~~

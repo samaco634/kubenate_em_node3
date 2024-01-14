@@ -37,6 +37,13 @@ Vagrant.configure("2") do |config|
       v.vm.hostname = spec[:name]
       v.vm.network :private_network,ip: spec[:private_ip]
       #v.vm.network :public_network,ip:  spec[:public_ip], bridge: bridge_if
+      # Enable ssh forward agent
+    config.vm.provision "shell", inline: <<-SHELL
+      sed -i 's/#PermitRootLogin yes/PermitRootLogin yes/g' /etc/ssh/sshd_config;
+      sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config    
+      systemctl restart sshd.service
+    SHELL
+      v.ssh.forward_agent = true
       v.vm.provider "virtualbox" do |vbox|
         vbox.gui = false
         vbox.cpus = spec[:cpu]

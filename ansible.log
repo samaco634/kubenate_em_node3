@@ -1,0 +1,446 @@
+2024-01-14 00:31:54,818 p=3741 u=vagrant n=ansible | [WARNING]: While constructing a mapping from
+/vagrant/playbook/master/tasks/main.yml, line 125, column 3, found a duplicate
+dict key (become_user). Using last defined value only.
+
+2024-01-14 00:31:54,852 p=3741 u=vagrant n=ansible | PLAY [Kubernetes base] *********************************************************
+2024-01-14 00:31:54,877 p=3741 u=vagrant n=ansible | TASK [Gathering Facts] *********************************************************
+2024-01-14 00:31:56,190 p=3741 u=vagrant n=ansible | ok: [master]
+2024-01-14 00:31:56,221 p=3741 u=vagrant n=ansible | TASK [kubernetes : Change selinux] *********************************************
+2024-01-14 00:31:56,233 p=3741 u=vagrant n=ansible | skipping: [master]
+2024-01-14 00:31:56,249 p=3741 u=vagrant n=ansible | TASK [kubernetes : Stop firewalld] *********************************************
+2024-01-14 00:31:56,262 p=3741 u=vagrant n=ansible | skipping: [master]
+2024-01-14 00:31:56,277 p=3741 u=vagrant n=ansible | TASK [kubernetes : Disable Swap area and delete] *******************************
+2024-01-14 00:31:56,289 p=3741 u=vagrant n=ansible | skipping: [master]
+2024-01-14 00:31:56,313 p=3741 u=vagrant n=ansible | TASK [kubernetes : Add Docker GPG key] *****************************************
+2024-01-14 00:31:57,322 p=3741 u=vagrant n=ansible | changed: [master]
+2024-01-14 00:31:57,339 p=3741 u=vagrant n=ansible | TASK [kubernetes : Add Docker APT repository] **********************************
+2024-01-14 00:32:04,957 p=3741 u=vagrant n=ansible | changed: [master]
+2024-01-14 00:32:04,975 p=3741 u=vagrant n=ansible | TASK [kubernetes : Install a list of packages] *********************************
+2024-01-14 00:32:08,024 p=3741 u=vagrant n=ansible | fatal: [master]: FAILED! => {"cache_update_time": 1705192326, "cache_updated": true, "changed": false, "msg": "'/usr/bin/apt-get -y -o \"Dpkg::Options::=--force-confdef\" -o \"Dpkg::Options::=--force-confold\"       install 'apt-transport-https' 'nfs-common' 'docker-ce=24.0.7~ce~3-0~ubuntu'' failed: E: Version '24.0.7~ce~3-0~ubuntu' for 'docker-ce' was not found\n", "rc": 100, "stderr": "E: Version '24.0.7~ce~3-0~ubuntu' for 'docker-ce' was not found\n", "stderr_lines": ["E: Version '24.0.7~ce~3-0~ubuntu' for 'docker-ce' was not found"], "stdout": "Reading package lists...\nBuilding dependency tree...\nReading state information...\n", "stdout_lines": ["Reading package lists...", "Building dependency tree...", "Reading state information..."]}
+2024-01-14 00:32:08,027 p=3741 u=vagrant n=ansible | PLAY RECAP *********************************************************************
+2024-01-14 00:32:08,027 p=3741 u=vagrant n=ansible | master                     : ok=3    changed=2    unreachable=0    failed=1    skipped=3    rescued=0    ignored=0   
+2024-01-14 00:53:56,698 p=3843 u=vagrant n=ansible | PLAY [Kubernetes base] *********************************************************
+2024-01-14 00:53:56,719 p=3843 u=vagrant n=ansible | TASK [Gathering Facts] *********************************************************
+2024-01-14 00:53:58,069 p=3843 u=vagrant n=ansible | ok: [node1]
+2024-01-14 00:53:58,099 p=3843 u=vagrant n=ansible | TASK [kubernetes : Change selinux] *********************************************
+2024-01-14 00:53:58,111 p=3843 u=vagrant n=ansible | skipping: [node1]
+2024-01-14 00:53:58,126 p=3843 u=vagrant n=ansible | TASK [kubernetes : Stop firewalld] *********************************************
+2024-01-14 00:53:58,276 p=3843 u=vagrant n=ansible | skipping: [node1]
+2024-01-14 00:53:58,291 p=3843 u=vagrant n=ansible | TASK [kubernetes : Disable Swap area and delete] *******************************
+2024-01-14 00:53:58,304 p=3843 u=vagrant n=ansible | skipping: [node1]
+2024-01-14 00:53:58,319 p=3843 u=vagrant n=ansible | TASK [kubernetes : Add Docker GPG key] *****************************************
+2024-01-14 00:53:59,329 p=3843 u=vagrant n=ansible | changed: [node1]
+2024-01-14 00:53:59,344 p=3843 u=vagrant n=ansible | TASK [kubernetes : Add Docker APT repository] **********************************
+2024-01-14 00:54:05,931 p=3843 u=vagrant n=ansible | changed: [node1]
+2024-01-14 00:54:05,946 p=3843 u=vagrant n=ansible | TASK [kubernetes : Install a list of packages] *********************************
+2024-01-14 00:54:31,089 p=3843 u=vagrant n=ansible | changed: [node1]
+2024-01-14 00:54:31,102 p=3843 u=vagrant n=ansible | TASK [kubernetes : ensure a list of packages uninstalled] **********************
+2024-01-14 00:54:31,115 p=3843 u=vagrant n=ansible | skipping: [node1]
+2024-01-14 00:54:31,130 p=3843 u=vagrant n=ansible | TASK [kubernetes : Add Docker repository] **************************************
+2024-01-14 00:54:31,144 p=3843 u=vagrant n=ansible | skipping: [node1]
+2024-01-14 00:54:31,159 p=3843 u=vagrant n=ansible | TASK [kubernetes : ensure a list of packages installed] ************************
+2024-01-14 00:54:31,172 p=3843 u=vagrant n=ansible | skipping: [node1]
+2024-01-14 00:54:31,187 p=3843 u=vagrant n=ansible | TASK [kubernetes : Add the user 'vagrant' with a specific uid and a primary group of 'docker'] ***
+2024-01-14 00:54:31,597 p=3843 u=vagrant n=ansible | changed: [node1]
+2024-01-14 00:54:31,621 p=3843 u=vagrant n=ansible | TASK [kubernetes : Start dockerd] **********************************************
+2024-01-14 00:54:32,261 p=3843 u=vagrant n=ansible | ok: [node1]
+2024-01-14 00:54:32,277 p=3843 u=vagrant n=ansible | TASK [kubernetes : Add GlusterFS Repository] ***********************************
+2024-01-14 00:54:41,625 p=3843 u=vagrant n=ansible | changed: [node1]
+2024-01-14 00:54:41,640 p=3843 u=vagrant n=ansible | TASK [kubernetes : Install GlusterFS client] ***********************************
+2024-01-14 00:54:53,437 p=3843 u=vagrant n=ansible | changed: [node1]
+2024-01-14 00:54:53,451 p=3843 u=vagrant n=ansible | TASK [kubernetes : Set sysctl] *************************************************
+2024-01-14 00:54:53,801 p=3843 u=vagrant n=ansible | changed: [node1]
+2024-01-14 00:54:53,817 p=3843 u=vagrant n=ansible | TASK [kubernetes : modprobe br_netfilter] **************************************
+2024-01-14 00:54:53,829 p=3843 u=vagrant n=ansible | skipping: [node1]
+2024-01-14 00:54:53,844 p=3843 u=vagrant n=ansible | TASK [kubernetes : sysctl] *****************************************************
+2024-01-14 00:54:53,857 p=3843 u=vagrant n=ansible | skipping: [node1]
+2024-01-14 00:54:53,872 p=3843 u=vagrant n=ansible | TASK [kubernetes : add Kubernetes apt-key] *************************************
+2024-01-14 00:54:55,055 p=3843 u=vagrant n=ansible | changed: [node1]
+2024-01-14 00:54:55,070 p=3843 u=vagrant n=ansible | TASK [kubernetes : add Kubernetes' APT repository] *****************************
+2024-01-14 00:55:02,044 p=3843 u=vagrant n=ansible | changed: [node1]
+2024-01-14 00:55:02,060 p=3843 u=vagrant n=ansible | TASK [kubernetes : Install kubectl] ********************************************
+2024-01-14 00:55:03,495 p=3843 u=vagrant n=ansible | fatal: [node1]: FAILED! => {"cache_update_time": 1705193698, "cache_updated": false, "changed": false, "msg": "'/usr/bin/apt-get -y -o \"Dpkg::Options::=--force-confdef\" -o \"Dpkg::Options::=--force-confold\"       install 'kubectl=1.29.10-00'' failed: E: Version '1.29.10-00' for 'kubectl' was not found\n", "rc": 100, "stderr": "E: Version '1.29.10-00' for 'kubectl' was not found\n", "stderr_lines": ["E: Version '1.29.10-00' for 'kubectl' was not found"], "stdout": "Reading package lists...\nBuilding dependency tree...\nReading state information...\n", "stdout_lines": ["Reading package lists...", "Building dependency tree...", "Reading state information..."]}
+2024-01-14 00:55:03,496 p=3843 u=vagrant n=ansible | PLAY RECAP *********************************************************************
+2024-01-14 00:55:03,497 p=3843 u=vagrant n=ansible | node1                      : ok=11   changed=9    unreachable=0    failed=1    skipped=8    rescued=0    ignored=0   
+2024-01-14 01:03:39,361 p=3740 u=vagrant n=ansible | [WARNING]: While constructing a mapping from
+/vagrant/playbook/master/tasks/main.yml, line 125, column 3, found a duplicate
+dict key (become_user). Using last defined value only.
+
+2024-01-14 01:03:39,396 p=3740 u=vagrant n=ansible | PLAY [Kubernetes base] *********************************************************
+2024-01-14 01:03:39,421 p=3740 u=vagrant n=ansible | TASK [Gathering Facts] *********************************************************
+2024-01-14 01:03:40,739 p=3740 u=vagrant n=ansible | ok: [master]
+2024-01-14 01:03:40,774 p=3740 u=vagrant n=ansible | TASK [kubernetes : Change selinux] *********************************************
+2024-01-14 01:03:40,787 p=3740 u=vagrant n=ansible | skipping: [master]
+2024-01-14 01:03:40,802 p=3740 u=vagrant n=ansible | TASK [kubernetes : Stop firewalld] *********************************************
+2024-01-14 01:03:40,814 p=3740 u=vagrant n=ansible | skipping: [master]
+2024-01-14 01:03:40,829 p=3740 u=vagrant n=ansible | TASK [kubernetes : Disable Swap area and delete] *******************************
+2024-01-14 01:03:40,841 p=3740 u=vagrant n=ansible | skipping: [master]
+2024-01-14 01:03:40,856 p=3740 u=vagrant n=ansible | TASK [kubernetes : Add Docker GPG key] *****************************************
+2024-01-14 01:03:41,884 p=3740 u=vagrant n=ansible | changed: [master]
+2024-01-14 01:03:41,897 p=3740 u=vagrant n=ansible | TASK [kubernetes : Add Docker APT repository] **********************************
+2024-01-14 01:03:49,579 p=3740 u=vagrant n=ansible | changed: [master]
+2024-01-14 01:03:49,595 p=3740 u=vagrant n=ansible | TASK [kubernetes : Install a list of packages] *********************************
+2024-01-14 01:04:18,876 p=3740 u=vagrant n=ansible | changed: [master]
+2024-01-14 01:04:18,896 p=3740 u=vagrant n=ansible | TASK [kubernetes : ensure a list of packages uninstalled] **********************
+2024-01-14 01:04:18,909 p=3740 u=vagrant n=ansible | skipping: [master]
+2024-01-14 01:04:18,924 p=3740 u=vagrant n=ansible | TASK [kubernetes : Add Docker repository] **************************************
+2024-01-14 01:04:18,936 p=3740 u=vagrant n=ansible | skipping: [master]
+2024-01-14 01:04:18,951 p=3740 u=vagrant n=ansible | TASK [kubernetes : ensure a list of packages installed] ************************
+2024-01-14 01:04:18,963 p=3740 u=vagrant n=ansible | skipping: [master]
+2024-01-14 01:04:18,981 p=3740 u=vagrant n=ansible | TASK [kubernetes : Add the user 'vagrant' with a specific uid and a primary group of 'docker'] ***
+2024-01-14 01:04:19,403 p=3740 u=vagrant n=ansible | changed: [master]
+2024-01-14 01:04:19,420 p=3740 u=vagrant n=ansible | TASK [kubernetes : Start dockerd] **********************************************
+2024-01-14 01:04:20,068 p=3740 u=vagrant n=ansible | ok: [master]
+2024-01-14 01:04:20,084 p=3740 u=vagrant n=ansible | TASK [kubernetes : Add GlusterFS Repository] ***********************************
+2024-01-14 01:04:29,371 p=3740 u=vagrant n=ansible | changed: [master]
+2024-01-14 01:04:29,388 p=3740 u=vagrant n=ansible | TASK [kubernetes : Install GlusterFS client] ***********************************
+2024-01-14 01:04:40,728 p=3740 u=vagrant n=ansible | changed: [master]
+2024-01-14 01:04:40,745 p=3740 u=vagrant n=ansible | TASK [kubernetes : Set sysctl] *************************************************
+2024-01-14 01:04:41,114 p=3740 u=vagrant n=ansible | changed: [master]
+2024-01-14 01:04:41,128 p=3740 u=vagrant n=ansible | TASK [kubernetes : modprobe br_netfilter] **************************************
+2024-01-14 01:04:41,141 p=3740 u=vagrant n=ansible | skipping: [master]
+2024-01-14 01:04:41,159 p=3740 u=vagrant n=ansible | TASK [kubernetes : sysctl] *****************************************************
+2024-01-14 01:04:41,172 p=3740 u=vagrant n=ansible | skipping: [master]
+2024-01-14 01:04:41,186 p=3740 u=vagrant n=ansible | TASK [kubernetes : add Kubernetes apt-key] *************************************
+2024-01-14 01:04:42,408 p=3740 u=vagrant n=ansible | changed: [master]
+2024-01-14 01:04:42,423 p=3740 u=vagrant n=ansible | TASK [kubernetes : add Kubernetes' APT repository] *****************************
+2024-01-14 01:04:49,460 p=3740 u=vagrant n=ansible | changed: [master]
+2024-01-14 01:04:49,476 p=3740 u=vagrant n=ansible | TASK [kubernetes : Install kubectl] ********************************************
+2024-01-14 01:04:50,956 p=3740 u=vagrant n=ansible | fatal: [master]: FAILED! => {"cache_update_time": 1705194286, "cache_updated": false, "changed": false, "msg": "'/usr/bin/apt-get -y -o \"Dpkg::Options::=--force-confdef\" -o \"Dpkg::Options::=--force-confold\"       install 'kubectl=1.29.0'' failed: E: Version '1.29.0' for 'kubectl' was not found\n", "rc": 100, "stderr": "E: Version '1.29.0' for 'kubectl' was not found\n", "stderr_lines": ["E: Version '1.29.0' for 'kubectl' was not found"], "stdout": "Reading package lists...\nBuilding dependency tree...\nReading state information...\n", "stdout_lines": ["Reading package lists...", "Building dependency tree...", "Reading state information..."]}
+2024-01-14 01:04:50,958 p=3740 u=vagrant n=ansible | PLAY RECAP *********************************************************************
+2024-01-14 01:04:50,958 p=3740 u=vagrant n=ansible | master                     : ok=11   changed=9    unreachable=0    failed=1    skipped=8    rescued=0    ignored=0   
+2024-01-14 01:15:58,791 p=3854 u=vagrant n=ansible | PLAY [Kubernetes base] *********************************************************
+2024-01-14 01:15:58,815 p=3854 u=vagrant n=ansible | TASK [Gathering Facts] *********************************************************
+2024-01-14 01:16:00,404 p=3854 u=vagrant n=ansible | ok: [node1]
+2024-01-14 01:16:00,438 p=3854 u=vagrant n=ansible | TASK [kubernetes : Change selinux] *********************************************
+2024-01-14 01:16:00,453 p=3854 u=vagrant n=ansible | skipping: [node1]
+2024-01-14 01:16:00,478 p=3854 u=vagrant n=ansible | TASK [kubernetes : Stop firewalld] *********************************************
+2024-01-14 01:16:00,495 p=3854 u=vagrant n=ansible | skipping: [node1]
+2024-01-14 01:16:00,515 p=3854 u=vagrant n=ansible | TASK [kubernetes : Disable Swap area and delete] *******************************
+2024-01-14 01:16:00,531 p=3854 u=vagrant n=ansible | skipping: [node1]
+2024-01-14 01:16:00,558 p=3854 u=vagrant n=ansible | TASK [kubernetes : Add Docker GPG key] *****************************************
+2024-01-14 01:16:01,636 p=3854 u=vagrant n=ansible | changed: [node1]
+2024-01-14 01:16:01,656 p=3854 u=vagrant n=ansible | TASK [kubernetes : Add Docker APT repository] **********************************
+2024-01-14 01:16:09,167 p=3854 u=vagrant n=ansible | changed: [node1]
+2024-01-14 01:16:09,182 p=3854 u=vagrant n=ansible | TASK [kubernetes : Install a list of packages] *********************************
+2024-01-14 01:16:37,792 p=3854 u=vagrant n=ansible | changed: [node1]
+2024-01-14 01:16:37,807 p=3854 u=vagrant n=ansible | TASK [kubernetes : ensure a list of packages uninstalled] **********************
+2024-01-14 01:16:37,821 p=3854 u=vagrant n=ansible | skipping: [node1]
+2024-01-14 01:16:37,837 p=3854 u=vagrant n=ansible | TASK [kubernetes : Add Docker repository] **************************************
+2024-01-14 01:16:37,851 p=3854 u=vagrant n=ansible | skipping: [node1]
+2024-01-14 01:16:37,867 p=3854 u=vagrant n=ansible | TASK [kubernetes : ensure a list of packages installed] ************************
+2024-01-14 01:16:37,880 p=3854 u=vagrant n=ansible | skipping: [node1]
+2024-01-14 01:16:37,897 p=3854 u=vagrant n=ansible | TASK [kubernetes : Add the user 'vagrant' with a specific uid and a primary group of 'docker'] ***
+2024-01-14 01:16:38,329 p=3854 u=vagrant n=ansible | changed: [node1]
+2024-01-14 01:16:38,344 p=3854 u=vagrant n=ansible | TASK [kubernetes : Start dockerd] **********************************************
+2024-01-14 01:16:39,021 p=3854 u=vagrant n=ansible | ok: [node1]
+2024-01-14 01:16:39,036 p=3854 u=vagrant n=ansible | TASK [kubernetes : Add GlusterFS Repository] ***********************************
+2024-01-14 01:16:48,725 p=3854 u=vagrant n=ansible | changed: [node1]
+2024-01-14 01:16:48,744 p=3854 u=vagrant n=ansible | TASK [kubernetes : Install GlusterFS client] ***********************************
+2024-01-14 01:16:59,235 p=3854 u=vagrant n=ansible | changed: [node1]
+2024-01-14 01:16:59,252 p=3854 u=vagrant n=ansible | TASK [kubernetes : Set sysctl] *************************************************
+2024-01-14 01:16:59,629 p=3854 u=vagrant n=ansible | changed: [node1]
+2024-01-14 01:16:59,653 p=3854 u=vagrant n=ansible | TASK [kubernetes : modprobe br_netfilter] **************************************
+2024-01-14 01:16:59,666 p=3854 u=vagrant n=ansible | skipping: [node1]
+2024-01-14 01:16:59,683 p=3854 u=vagrant n=ansible | TASK [kubernetes : sysctl] *****************************************************
+2024-01-14 01:16:59,697 p=3854 u=vagrant n=ansible | skipping: [node1]
+2024-01-14 01:16:59,715 p=3854 u=vagrant n=ansible | TASK [kubernetes : add Kubernetes apt-key] *************************************
+2024-01-14 01:17:00,964 p=3854 u=vagrant n=ansible | changed: [node1]
+2024-01-14 01:17:00,981 p=3854 u=vagrant n=ansible | TASK [kubernetes : add Kubernetes' APT repository] *****************************
+2024-01-14 01:17:10,662 p=3854 u=vagrant n=ansible | changed: [node1]
+2024-01-14 01:17:10,680 p=3854 u=vagrant n=ansible | TASK [kubernetes : Install kubectl] ********************************************
+2024-01-14 01:17:12,170 p=3854 u=vagrant n=ansible | fatal: [node1]: FAILED! => {"cache_update_time": 1705195027, "cache_updated": false, "changed": false, "msg": "'/usr/bin/apt-get -y -o \"Dpkg::Options::=--force-confdef\" -o \"Dpkg::Options::=--force-confold\"       install 'kubectl=1.29.0-00'' failed: E: Version '1.29.0-00' for 'kubectl' was not found\n", "rc": 100, "stderr": "E: Version '1.29.0-00' for 'kubectl' was not found\n", "stderr_lines": ["E: Version '1.29.0-00' for 'kubectl' was not found"], "stdout": "Reading package lists...\nBuilding dependency tree...\nReading state information...\n", "stdout_lines": ["Reading package lists...", "Building dependency tree...", "Reading state information..."]}
+2024-01-14 01:17:12,171 p=3854 u=vagrant n=ansible | PLAY RECAP *********************************************************************
+2024-01-14 01:17:12,171 p=3854 u=vagrant n=ansible | node1                      : ok=11   changed=9    unreachable=0    failed=1    skipped=8    rescued=0    ignored=0   
+2024-01-14 01:48:20,009 p=3716 u=vagrant n=ansible | ERROR! no module/action detected in task.
+
+The error appears to be in '/vagrant/playbook/kubernetes/tasks/main.yml': line 154, column 3, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+    - ansible_facts.distribution == "Ubuntu"
+- name:
+  ^ here
+
+2024-01-14 01:57:47,418 p=3978 u=vagrant n=ansible | PLAY [Kubernetes base] *********************************************************
+2024-01-14 01:57:47,445 p=3978 u=vagrant n=ansible | TASK [Gathering Facts] *********************************************************
+2024-01-14 01:57:49,419 p=3978 u=vagrant n=ansible | ok: [node1]
+2024-01-14 01:57:49,468 p=3978 u=vagrant n=ansible | TASK [kubernetes : Change selinux] *********************************************
+2024-01-14 01:57:49,486 p=3978 u=vagrant n=ansible | skipping: [node1]
+2024-01-14 01:57:49,508 p=3978 u=vagrant n=ansible | TASK [kubernetes : Stop firewalld] *********************************************
+2024-01-14 01:57:49,520 p=3978 u=vagrant n=ansible | skipping: [node1]
+2024-01-14 01:57:49,542 p=3978 u=vagrant n=ansible | TASK [kubernetes : Disable Swap area and delete] *******************************
+2024-01-14 01:57:49,561 p=3978 u=vagrant n=ansible | skipping: [node1]
+2024-01-14 01:57:49,578 p=3978 u=vagrant n=ansible | TASK [kubernetes : Add Docker GPG key] *****************************************
+2024-01-14 01:57:51,153 p=3978 u=vagrant n=ansible | changed: [node1]
+2024-01-14 01:57:51,170 p=3978 u=vagrant n=ansible | TASK [kubernetes : Add Docker APT repository] **********************************
+2024-01-14 01:58:00,790 p=3978 u=vagrant n=ansible | changed: [node1]
+2024-01-14 01:58:00,814 p=3978 u=vagrant n=ansible | TASK [kubernetes : Install a list of packages] *********************************
+2024-01-14 01:59:13,340 p=3978 u=vagrant n=ansible | changed: [node1]
+2024-01-14 01:59:13,375 p=3978 u=vagrant n=ansible | TASK [kubernetes : ensure a list of packages uninstalled] **********************
+2024-01-14 01:59:13,400 p=3978 u=vagrant n=ansible | skipping: [node1]
+2024-01-14 01:59:13,423 p=3978 u=vagrant n=ansible | TASK [kubernetes : Add Docker repository] **************************************
+2024-01-14 01:59:13,441 p=3978 u=vagrant n=ansible | skipping: [node1]
+2024-01-14 01:59:13,457 p=3978 u=vagrant n=ansible | TASK [kubernetes : ensure a list of packages installed] ************************
+2024-01-14 01:59:13,474 p=3978 u=vagrant n=ansible | skipping: [node1]
+2024-01-14 01:59:13,505 p=3978 u=vagrant n=ansible | TASK [kubernetes : Add the user 'vagrant' with a specific uid and a primary group of 'docker'] ***
+2024-01-14 01:59:14,118 p=3978 u=vagrant n=ansible | changed: [node1]
+2024-01-14 01:59:14,134 p=3978 u=vagrant n=ansible | TASK [kubernetes : Start dockerd] **********************************************
+2024-01-14 01:59:15,014 p=3978 u=vagrant n=ansible | ok: [node1]
+2024-01-14 01:59:15,038 p=3978 u=vagrant n=ansible | TASK [kubernetes : Add GlusterFS Repository] ***********************************
+2024-01-14 01:59:27,817 p=3978 u=vagrant n=ansible | changed: [node1]
+2024-01-14 01:59:27,837 p=3978 u=vagrant n=ansible | TASK [kubernetes : Install GlusterFS client] ***********************************
+2024-01-14 01:59:42,424 p=3978 u=vagrant n=ansible | changed: [node1]
+2024-01-14 01:59:42,442 p=3978 u=vagrant n=ansible | TASK [kubernetes : Set sysctl] *************************************************
+2024-01-14 01:59:42,939 p=3978 u=vagrant n=ansible | changed: [node1]
+2024-01-14 01:59:42,966 p=3978 u=vagrant n=ansible | TASK [kubernetes : modprobe br_netfilter] **************************************
+2024-01-14 01:59:42,979 p=3978 u=vagrant n=ansible | skipping: [node1]
+2024-01-14 01:59:42,997 p=3978 u=vagrant n=ansible | TASK [kubernetes : sysctl] *****************************************************
+2024-01-14 01:59:43,016 p=3978 u=vagrant n=ansible | skipping: [node1]
+2024-01-14 01:59:43,037 p=3978 u=vagrant n=ansible | TASK [kubernetes : install packages needed to use the Kubernetes apt repository] ***
+2024-01-14 01:59:44,490 p=3978 u=vagrant n=ansible | ok: [node1]
+2024-01-14 01:59:44,516 p=3978 u=vagrant n=ansible | TASK [kubernetes : add Kubernetes apt-key] *************************************
+2024-01-14 01:59:46,296 p=3978 u=vagrant n=ansible | changed: [node1]
+2024-01-14 01:59:46,317 p=3978 u=vagrant n=ansible | TASK [kubernetes : add Kubernetes' APT repository] *****************************
+2024-01-14 01:59:56,427 p=3978 u=vagrant n=ansible | changed: [node1]
+2024-01-14 01:59:56,446 p=3978 u=vagrant n=ansible | TASK [kubernetes : Install kubectl] ********************************************
+2024-01-14 02:00:04,546 p=3978 u=vagrant n=ansible | changed: [node1]
+2024-01-14 02:00:04,564 p=3978 u=vagrant n=ansible | TASK [kubernetes : Install kubelet] ********************************************
+2024-01-14 02:00:27,395 p=3978 u=vagrant n=ansible | changed: [node1]
+2024-01-14 02:00:27,492 p=3978 u=vagrant n=ansible | TASK [kubernetes : Install kubeadm] ********************************************
+2024-01-14 02:00:55,174 p=3978 u=vagrant n=ansible | changed: [node1]
+2024-01-14 02:00:55,211 p=3978 u=vagrant n=ansible | TASK [kubernetes : check exisiting /etc/yum.repos.d/kubernetes.repo] ***********
+2024-01-14 02:00:55,743 p=3978 u=vagrant n=ansible | ok: [node1]
+2024-01-14 02:00:55,772 p=3978 u=vagrant n=ansible | TASK [kubernetes : install kubernetes.repo] ************************************
+2024-01-14 02:00:55,789 p=3978 u=vagrant n=ansible | skipping: [node1]
+2024-01-14 02:00:55,806 p=3978 u=vagrant n=ansible | TASK [kubernetes : install kubelet kubeadm kubectl] ****************************
+2024-01-14 02:00:55,819 p=3978 u=vagrant n=ansible | skipping: [node1]
+2024-01-14 02:00:55,854 p=3978 u=vagrant n=ansible | TASK [kubernetes : enable kubelet] *********************************************
+2024-01-14 02:00:56,391 p=3978 u=vagrant n=ansible | ok: [node1]
+2024-01-14 02:00:56,410 p=3978 u=vagrant n=ansible | TASK [kubernetes : change 10-kubeadm.conf for v1.11 or later for Ubuntu] *******
+2024-01-14 02:00:56,895 p=3978 u=vagrant n=ansible | changed: [node1]
+2024-01-14 02:00:56,913 p=3978 u=vagrant n=ansible | TASK [kubernetes : change kubelet.service for CentOS] **************************
+2024-01-14 02:00:56,930 p=3978 u=vagrant n=ansible | skipping: [node1]
+2024-01-14 02:00:56,968 p=3978 u=vagrant n=ansible | TASK [kubernetes : daemon-reload and restart kubelet] **************************
+2024-01-14 02:00:57,969 p=3978 u=vagrant n=ansible | changed: [node1]
+2024-01-14 02:00:58,038 p=3978 u=vagrant n=ansible | TASK [node : kubeadm reset] ****************************************************
+2024-01-14 02:00:59,397 p=3978 u=vagrant n=ansible | changed: [node1]
+2024-01-14 02:00:59,435 p=3978 u=vagrant n=ansible | TASK [node : copy from home to local] ******************************************
+2024-01-14 02:00:59,483 p=3978 u=vagrant n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: If you are using a module and expect the file to exist on the remote, see the remote_src option
+2024-01-14 02:00:59,494 p=3978 u=vagrant n=ansible | fatal: [node1]: FAILED! => {"changed": false, "msg": "Could not find or access '/vagrant/kubeadm-join.tmp' on the Ansible Controller.\nIf you are using a module and expect the file to exist on the remote, see the remote_src option"}
+2024-01-14 02:00:59,495 p=3978 u=vagrant n=ansible | PLAY RECAP *********************************************************************
+2024-01-14 02:00:59,496 p=3978 u=vagrant n=ansible | node1                      : ok=20   changed=15   unreachable=0    failed=1    skipped=11   rescued=0    ignored=0   
+2024-01-14 02:17:01,157 p=3813 u=vagrant n=ansible | [WARNING]: While constructing a mapping from
+/vagrant/playbook/master/tasks/main.yml, line 125, column 3, found a duplicate
+dict key (become_user). Using last defined value only.
+
+2024-01-14 02:17:01,194 p=3813 u=vagrant n=ansible | PLAY [Kubernetes base] *********************************************************
+2024-01-14 02:17:01,326 p=3813 u=vagrant n=ansible | TASK [Gathering Facts] *********************************************************
+2024-01-14 02:17:03,840 p=3813 u=vagrant n=ansible | ok: [master]
+2024-01-14 02:17:03,942 p=3813 u=vagrant n=ansible | TASK [kubernetes : Change selinux] *********************************************
+2024-01-14 02:17:03,957 p=3813 u=vagrant n=ansible | skipping: [master]
+2024-01-14 02:17:03,976 p=3813 u=vagrant n=ansible | TASK [kubernetes : Stop firewalld] *********************************************
+2024-01-14 02:17:03,990 p=3813 u=vagrant n=ansible | skipping: [master]
+2024-01-14 02:17:04,010 p=3813 u=vagrant n=ansible | TASK [kubernetes : Disable Swap area and delete] *******************************
+2024-01-14 02:17:04,087 p=3813 u=vagrant n=ansible | skipping: [master]
+2024-01-14 02:17:04,108 p=3813 u=vagrant n=ansible | TASK [kubernetes : Add Docker GPG key] *****************************************
+2024-01-14 02:17:06,797 p=3813 u=vagrant n=ansible | changed: [master]
+2024-01-14 02:17:06,823 p=3813 u=vagrant n=ansible | TASK [kubernetes : Add Docker APT repository] **********************************
+2024-01-14 02:17:22,399 p=3813 u=vagrant n=ansible | changed: [master]
+2024-01-14 02:17:22,414 p=3813 u=vagrant n=ansible | TASK [kubernetes : Install a list of packages] *********************************
+2024-01-14 02:18:33,625 p=3813 u=vagrant n=ansible | changed: [master]
+2024-01-14 02:18:33,682 p=3813 u=vagrant n=ansible | TASK [kubernetes : ensure a list of packages uninstalled] **********************
+2024-01-14 02:18:33,715 p=3813 u=vagrant n=ansible | skipping: [master]
+2024-01-14 02:18:33,749 p=3813 u=vagrant n=ansible | TASK [kubernetes : Add Docker repository] **************************************
+2024-01-14 02:18:33,784 p=3813 u=vagrant n=ansible | skipping: [master]
+2024-01-14 02:18:33,804 p=3813 u=vagrant n=ansible | TASK [kubernetes : ensure a list of packages installed] ************************
+2024-01-14 02:18:33,819 p=3813 u=vagrant n=ansible | skipping: [master]
+2024-01-14 02:18:33,838 p=3813 u=vagrant n=ansible | TASK [kubernetes : Add the user 'vagrant' with a specific uid and a primary group of 'docker'] ***
+2024-01-14 02:18:35,032 p=3813 u=vagrant n=ansible | changed: [master]
+2024-01-14 02:18:35,075 p=3813 u=vagrant n=ansible | TASK [kubernetes : Start dockerd] **********************************************
+2024-01-14 02:18:36,823 p=3813 u=vagrant n=ansible | ok: [master]
+2024-01-14 02:18:36,842 p=3813 u=vagrant n=ansible | TASK [kubernetes : Add GlusterFS Repository] ***********************************
+2024-01-14 02:18:54,838 p=3813 u=vagrant n=ansible | changed: [master]
+2024-01-14 02:18:54,866 p=3813 u=vagrant n=ansible | TASK [kubernetes : Install GlusterFS client] ***********************************
+2024-01-14 02:19:16,456 p=3813 u=vagrant n=ansible | changed: [master]
+2024-01-14 02:19:16,489 p=3813 u=vagrant n=ansible | TASK [kubernetes : Set sysctl] *************************************************
+2024-01-14 02:19:17,333 p=3813 u=vagrant n=ansible | changed: [master]
+2024-01-14 02:19:17,351 p=3813 u=vagrant n=ansible | TASK [kubernetes : modprobe br_netfilter] **************************************
+2024-01-14 02:19:17,387 p=3813 u=vagrant n=ansible | skipping: [master]
+2024-01-14 02:19:17,415 p=3813 u=vagrant n=ansible | TASK [kubernetes : sysctl] *****************************************************
+2024-01-14 02:19:17,450 p=3813 u=vagrant n=ansible | skipping: [master]
+2024-01-14 02:19:17,474 p=3813 u=vagrant n=ansible | TASK [kubernetes : install packages needed to use the Kubernetes apt repository] ***
+2024-01-14 02:19:19,962 p=3813 u=vagrant n=ansible | ok: [master]
+2024-01-14 02:19:19,982 p=3813 u=vagrant n=ansible | TASK [kubernetes : add Kubernetes apt-key] *************************************
+2024-01-14 02:19:22,641 p=3813 u=vagrant n=ansible | changed: [master]
+2024-01-14 02:19:22,658 p=3813 u=vagrant n=ansible | TASK [kubernetes : add Kubernetes' APT repository] *****************************
+2024-01-14 02:19:37,781 p=3813 u=vagrant n=ansible | changed: [master]
+2024-01-14 02:19:37,863 p=3813 u=vagrant n=ansible | TASK [kubernetes : Install kubectl] ********************************************
+2024-01-14 02:19:51,051 p=3813 u=vagrant n=ansible | changed: [master]
+2024-01-14 02:19:51,071 p=3813 u=vagrant n=ansible | TASK [kubernetes : Install kubelet] ********************************************
+2024-01-14 02:20:23,553 p=3813 u=vagrant n=ansible | changed: [master]
+2024-01-14 02:20:23,587 p=3813 u=vagrant n=ansible | TASK [kubernetes : Install kubeadm] ********************************************
+2024-01-14 02:20:46,676 p=3813 u=vagrant n=ansible | changed: [master]
+2024-01-14 02:20:46,704 p=3813 u=vagrant n=ansible | TASK [kubernetes : check exisiting /etc/yum.repos.d/kubernetes.repo] ***********
+2024-01-14 02:20:47,408 p=3813 u=vagrant n=ansible | ok: [master]
+2024-01-14 02:20:47,451 p=3813 u=vagrant n=ansible | TASK [kubernetes : install kubernetes.repo] ************************************
+2024-01-14 02:20:47,467 p=3813 u=vagrant n=ansible | skipping: [master]
+2024-01-14 02:20:47,485 p=3813 u=vagrant n=ansible | TASK [kubernetes : install kubelet kubeadm kubectl] ****************************
+2024-01-14 02:20:47,561 p=3813 u=vagrant n=ansible | skipping: [master]
+2024-01-14 02:20:47,632 p=3813 u=vagrant n=ansible | TASK [kubernetes : enable kubelet] *********************************************
+2024-01-14 02:20:48,549 p=3813 u=vagrant n=ansible | ok: [master]
+2024-01-14 02:20:48,575 p=3813 u=vagrant n=ansible | TASK [kubernetes : change 10-kubeadm.conf for v1.11 or later for Ubuntu] *******
+2024-01-14 02:20:49,447 p=3813 u=vagrant n=ansible | changed: [master]
+2024-01-14 02:20:49,478 p=3813 u=vagrant n=ansible | TASK [kubernetes : change kubelet.service for CentOS] **************************
+2024-01-14 02:20:49,491 p=3813 u=vagrant n=ansible | skipping: [master]
+2024-01-14 02:20:49,539 p=3813 u=vagrant n=ansible | TASK [kubernetes : daemon-reload and restart kubelet] **************************
+2024-01-14 02:20:51,411 p=3813 u=vagrant n=ansible | changed: [master]
+2024-01-14 02:20:51,540 p=3813 u=vagrant n=ansible | TASK [master : kubeadm reset v1.11 or later] ***********************************
+2024-01-14 02:20:52,641 p=3813 u=vagrant n=ansible | changed: [master]
+2024-01-14 02:20:52,657 p=3813 u=vagrant n=ansible | TASK [master : kubeadm init for Ubuntu] ****************************************
+2024-01-14 02:20:54,853 p=3813 u=vagrant n=ansible | fatal: [master]: FAILED! => {"changed": true, "cmd": ["kubeadm", "init", "--pod-network-cidr=10.244.0.0/16", "--apiserver-advertise-address=172.16.20.11", "--service-cidr=10.32.0.0/24"], "delta": "0:00:01.563819", "end": "2024-01-14 02:20:54.714744", "msg": "non-zero return code", "rc": 1, "start": "2024-01-14 02:20:53.150925", "stderr": "I0114 02:20:53.852701   12340 version.go:256] remote version is much newer: v1.29.0; falling back to: stable-1.28\nerror execution phase preflight: [preflight] Some fatal errors occurred:\n\t[ERROR CRI]: container runtime is not running: output: time=\"2024-01-14T02:20:54Z\" level=fatal msg=\"validate service connection: CRI v1 runtime API is not implemented for endpoint \\\"unix:///var/run/containerd/containerd.sock\\\": rpc error: code = Unimplemented desc = unknown service runtime.v1.RuntimeService\"\n, error: exit status 1\n[preflight] If you know what you are doing, you can make a check non-fatal with `--ignore-preflight-errors=...`\nTo see the stack trace of this error execute with --v=5 or higher", "stderr_lines": ["I0114 02:20:53.852701   12340 version.go:256] remote version is much newer: v1.29.0; falling back to: stable-1.28", "error execution phase preflight: [preflight] Some fatal errors occurred:", "\t[ERROR CRI]: container runtime is not running: output: time=\"2024-01-14T02:20:54Z\" level=fatal msg=\"validate service connection: CRI v1 runtime API is not implemented for endpoint \\\"unix:///var/run/containerd/containerd.sock\\\": rpc error: code = Unimplemented desc = unknown service runtime.v1.RuntimeService\"", ", error: exit status 1", "[preflight] If you know what you are doing, you can make a check non-fatal with `--ignore-preflight-errors=...`", "To see the stack trace of this error execute with --v=5 or higher"], "stdout": "[init] Using Kubernetes version: v1.28.5\n[preflight] Running pre-flight checks", "stdout_lines": ["[init] Using Kubernetes version: v1.28.5", "[preflight] Running pre-flight checks"]}
+2024-01-14 02:20:54,856 p=3813 u=vagrant n=ansible | PLAY RECAP *********************************************************************
+2024-01-14 02:20:54,857 p=3813 u=vagrant n=ansible | master                     : ok=20   changed=15   unreachable=0    failed=1    skipped=11   rescued=0    ignored=0   
+2024-01-14 02:31:51,668 p=3798 u=vagrant n=ansible | [WARNING]: While constructing a mapping from
+/vagrant/playbook/master/tasks/main.yml, line 125, column 3, found a duplicate
+dict key (become_user). Using last defined value only.
+
+2024-01-14 02:31:51,744 p=3798 u=vagrant n=ansible | PLAY [Kubernetes base] *********************************************************
+2024-01-14 02:31:51,823 p=3798 u=vagrant n=ansible | TASK [Gathering Facts] *********************************************************
+2024-01-14 02:31:54,578 p=3798 u=vagrant n=ansible | ok: [master]
+2024-01-14 02:31:54,644 p=3798 u=vagrant n=ansible | TASK [kubernetes : Change selinux] *********************************************
+2024-01-14 02:31:54,658 p=3798 u=vagrant n=ansible | skipping: [master]
+2024-01-14 02:31:54,696 p=3798 u=vagrant n=ansible | TASK [kubernetes : Stop firewalld] *********************************************
+2024-01-14 02:31:54,723 p=3798 u=vagrant n=ansible | skipping: [master]
+2024-01-14 02:31:54,751 p=3798 u=vagrant n=ansible | TASK [kubernetes : Disable Swap area and delete] *******************************
+2024-01-14 02:31:54,783 p=3798 u=vagrant n=ansible | skipping: [master]
+2024-01-14 02:31:54,800 p=3798 u=vagrant n=ansible | TASK [kubernetes : Add Docker GPG key] *****************************************
+2024-01-14 02:31:57,554 p=3798 u=vagrant n=ansible | changed: [master]
+2024-01-14 02:31:57,570 p=3798 u=vagrant n=ansible | TASK [kubernetes : Add Docker APT repository] **********************************
+2024-01-14 02:32:12,717 p=3798 u=vagrant n=ansible | changed: [master]
+2024-01-14 02:32:12,733 p=3798 u=vagrant n=ansible | TASK [kubernetes : Install a list of packages] *********************************
+2024-01-14 02:33:26,846 p=3798 u=vagrant n=ansible | changed: [master]
+2024-01-14 02:33:26,870 p=3798 u=vagrant n=ansible | TASK [kubernetes : ensure a list of packages uninstalled] **********************
+2024-01-14 02:33:27,017 p=3798 u=vagrant n=ansible | skipping: [master]
+2024-01-14 02:33:27,036 p=3798 u=vagrant n=ansible | TASK [kubernetes : Add Docker repository] **************************************
+2024-01-14 02:33:27,050 p=3798 u=vagrant n=ansible | skipping: [master]
+2024-01-14 02:33:27,077 p=3798 u=vagrant n=ansible | TASK [kubernetes : ensure a list of packages installed] ************************
+2024-01-14 02:33:27,095 p=3798 u=vagrant n=ansible | skipping: [master]
+2024-01-14 02:33:27,119 p=3798 u=vagrant n=ansible | TASK [kubernetes : Add the user 'vagrant' with a specific uid and a primary group of 'docker'] ***
+2024-01-14 02:33:28,189 p=3798 u=vagrant n=ansible | changed: [master]
+2024-01-14 02:33:28,287 p=3798 u=vagrant n=ansible | TASK [kubernetes : Start dockerd] **********************************************
+2024-01-14 02:33:29,811 p=3798 u=vagrant n=ansible | ok: [master]
+2024-01-14 02:33:29,850 p=3798 u=vagrant n=ansible | TASK [kubernetes : Add GlusterFS Repository] ***********************************
+2024-01-14 02:33:49,220 p=3798 u=vagrant n=ansible | changed: [master]
+2024-01-14 02:33:49,255 p=3798 u=vagrant n=ansible | TASK [kubernetes : Install GlusterFS client] ***********************************
+2024-01-14 02:34:11,492 p=3798 u=vagrant n=ansible | changed: [master]
+2024-01-14 02:34:11,535 p=3798 u=vagrant n=ansible | TASK [kubernetes : Set sysctl] *************************************************
+2024-01-14 02:34:12,339 p=3798 u=vagrant n=ansible | changed: [master]
+2024-01-14 02:34:12,383 p=3798 u=vagrant n=ansible | TASK [kubernetes : modprobe br_netfilter] **************************************
+2024-01-14 02:34:12,406 p=3798 u=vagrant n=ansible | skipping: [master]
+2024-01-14 02:34:12,445 p=3798 u=vagrant n=ansible | TASK [kubernetes : sysctl] *****************************************************
+2024-01-14 02:34:12,484 p=3798 u=vagrant n=ansible | skipping: [master]
+2024-01-14 02:34:12,593 p=3798 u=vagrant n=ansible | TASK [kubernetes : install packages needed to use the Kubernetes apt repository] ***
+2024-01-14 02:34:15,515 p=3798 u=vagrant n=ansible | ok: [master]
+2024-01-14 02:34:15,564 p=3798 u=vagrant n=ansible | TASK [kubernetes : add Kubernetes apt-key] *************************************
+2024-01-14 02:34:19,115 p=3798 u=vagrant n=ansible | changed: [master]
+2024-01-14 02:34:19,182 p=3798 u=vagrant n=ansible | TASK [kubernetes : add Kubernetes' APT repository] *****************************
+2024-01-14 02:34:36,320 p=3798 u=vagrant n=ansible | changed: [master]
+2024-01-14 02:34:36,337 p=3798 u=vagrant n=ansible | TASK [kubernetes : Install kubectl] ********************************************
+2024-01-14 02:34:50,285 p=3798 u=vagrant n=ansible | changed: [master]
+2024-01-14 02:34:50,302 p=3798 u=vagrant n=ansible | TASK [kubernetes : Install kubelet] ********************************************
+2024-01-14 02:35:20,938 p=3798 u=vagrant n=ansible | changed: [master]
+2024-01-14 02:35:21,004 p=3798 u=vagrant n=ansible | TASK [kubernetes : Install kubeadm] ********************************************
+2024-01-14 02:35:42,517 p=3798 u=vagrant n=ansible | changed: [master]
+2024-01-14 02:35:42,540 p=3798 u=vagrant n=ansible | TASK [kubernetes : check exisiting /etc/yum.repos.d/kubernetes.repo] ***********
+2024-01-14 02:35:43,344 p=3798 u=vagrant n=ansible | ok: [master]
+2024-01-14 02:35:43,381 p=3798 u=vagrant n=ansible | TASK [kubernetes : install kubernetes.repo] ************************************
+2024-01-14 02:35:43,401 p=3798 u=vagrant n=ansible | skipping: [master]
+2024-01-14 02:35:43,460 p=3798 u=vagrant n=ansible | TASK [kubernetes : install kubelet kubeadm kubectl] ****************************
+2024-01-14 02:35:43,474 p=3798 u=vagrant n=ansible | skipping: [master]
+2024-01-14 02:35:43,504 p=3798 u=vagrant n=ansible | TASK [kubernetes : enable kubelet] *********************************************
+2024-01-14 02:35:44,277 p=3798 u=vagrant n=ansible | ok: [master]
+2024-01-14 02:35:44,304 p=3798 u=vagrant n=ansible | TASK [kubernetes : change 10-kubeadm.conf for v1.11 or later for Ubuntu] *******
+2024-01-14 02:35:45,063 p=3798 u=vagrant n=ansible | changed: [master]
+2024-01-14 02:35:45,092 p=3798 u=vagrant n=ansible | TASK [kubernetes : change kubelet.service for CentOS] **************************
+2024-01-14 02:35:45,112 p=3798 u=vagrant n=ansible | skipping: [master]
+2024-01-14 02:35:45,147 p=3798 u=vagrant n=ansible | TASK [kubernetes : daemon-reload and restart kubelet] **************************
+2024-01-14 02:35:46,708 p=3798 u=vagrant n=ansible | changed: [master]
+2024-01-14 02:35:46,783 p=3798 u=vagrant n=ansible | TASK [master : kubeadm reset v1.11 or later] ***********************************
+2024-01-14 02:35:47,811 p=3798 u=vagrant n=ansible | changed: [master]
+2024-01-14 02:35:47,829 p=3798 u=vagrant n=ansible | TASK [master : kubeadm init for Ubuntu] ****************************************
+2024-01-14 02:35:49,857 p=3798 u=vagrant n=ansible | fatal: [master]: FAILED! => {"changed": true, "cmd": ["kubeadm", "init", "--pod-network-cidr=10.244.0.0/16", "--apiserver-advertise-address=172.16.20.11", "--service-cidr=10.32.0.0/24"], "delta": "0:00:01.387160", "end": "2024-01-14 02:35:49.720215", "msg": "non-zero return code", "rc": 1, "start": "2024-01-14 02:35:48.333055", "stderr": "I0114 02:35:49.060474   12318 version.go:256] remote version is much newer: v1.29.0; falling back to: stable-1.28\nerror execution phase preflight: [preflight] Some fatal errors occurred:\n\t[ERROR CRI]: container runtime is not running: output: time=\"2024-01-14T02:35:49Z\" level=fatal msg=\"validate service connection: CRI v1 runtime API is not implemented for endpoint \\\"unix:///var/run/containerd/containerd.sock\\\": rpc error: code = Unimplemented desc = unknown service runtime.v1.RuntimeService\"\n, error: exit status 1\n[preflight] If you know what you are doing, you can make a check non-fatal with `--ignore-preflight-errors=...`\nTo see the stack trace of this error execute with --v=5 or higher", "stderr_lines": ["I0114 02:35:49.060474   12318 version.go:256] remote version is much newer: v1.29.0; falling back to: stable-1.28", "error execution phase preflight: [preflight] Some fatal errors occurred:", "\t[ERROR CRI]: container runtime is not running: output: time=\"2024-01-14T02:35:49Z\" level=fatal msg=\"validate service connection: CRI v1 runtime API is not implemented for endpoint \\\"unix:///var/run/containerd/containerd.sock\\\": rpc error: code = Unimplemented desc = unknown service runtime.v1.RuntimeService\"", ", error: exit status 1", "[preflight] If you know what you are doing, you can make a check non-fatal with `--ignore-preflight-errors=...`", "To see the stack trace of this error execute with --v=5 or higher"], "stdout": "[init] Using Kubernetes version: v1.28.5\n[preflight] Running pre-flight checks", "stdout_lines": ["[init] Using Kubernetes version: v1.28.5", "[preflight] Running pre-flight checks"]}
+2024-01-14 02:35:49,860 p=3798 u=vagrant n=ansible | PLAY RECAP *********************************************************************
+2024-01-14 02:35:49,860 p=3798 u=vagrant n=ansible | master                     : ok=20   changed=15   unreachable=0    failed=1    skipped=11   rescued=0    ignored=0   
+2024-01-14 03:07:34,735 p=3731 u=vagrant n=ansible | [WARNING]: While constructing a mapping from
+/vagrant/playbook/master/tasks/main.yml, line 125, column 3, found a duplicate
+dict key (become_user). Using last defined value only.
+
+2024-01-14 03:07:34,810 p=3731 u=vagrant n=ansible | PLAY [Kubernetes base] *********************************************************
+2024-01-14 03:07:34,863 p=3731 u=vagrant n=ansible | TASK [Gathering Facts] *********************************************************
+2024-01-14 03:07:37,621 p=3731 u=vagrant n=ansible | ok: [master]
+2024-01-14 03:07:37,671 p=3731 u=vagrant n=ansible | TASK [kubernetes : Change selinux] *********************************************
+2024-01-14 03:07:37,688 p=3731 u=vagrant n=ansible | skipping: [master]
+2024-01-14 03:07:37,703 p=3731 u=vagrant n=ansible | TASK [kubernetes : Stop firewalld] *********************************************
+2024-01-14 03:07:37,717 p=3731 u=vagrant n=ansible | skipping: [master]
+2024-01-14 03:07:37,739 p=3731 u=vagrant n=ansible | TASK [kubernetes : Disable Swap area and delete] *******************************
+2024-01-14 03:07:37,795 p=3731 u=vagrant n=ansible | skipping: [master]
+2024-01-14 03:07:37,811 p=3731 u=vagrant n=ansible | TASK [kubernetes : Add Docker GPG key] *****************************************
+2024-01-14 03:07:40,811 p=3731 u=vagrant n=ansible | changed: [master]
+2024-01-14 03:07:40,877 p=3731 u=vagrant n=ansible | TASK [kubernetes : Add Docker APT repository] **********************************
+2024-01-14 03:07:55,365 p=3731 u=vagrant n=ansible | changed: [master]
+2024-01-14 03:07:55,382 p=3731 u=vagrant n=ansible | TASK [kubernetes : Install a list of packages] *********************************
+2024-01-14 03:09:05,015 p=3731 u=vagrant n=ansible | changed: [master]
+2024-01-14 03:09:05,033 p=3731 u=vagrant n=ansible | TASK [kubernetes : ensure a list of packages uninstalled] **********************
+2024-01-14 03:09:05,047 p=3731 u=vagrant n=ansible | skipping: [master]
+2024-01-14 03:09:05,065 p=3731 u=vagrant n=ansible | TASK [kubernetes : Add Docker repository] **************************************
+2024-01-14 03:09:05,082 p=3731 u=vagrant n=ansible | skipping: [master]
+2024-01-14 03:09:05,105 p=3731 u=vagrant n=ansible | TASK [kubernetes : ensure a list of packages installed] ************************
+2024-01-14 03:09:05,120 p=3731 u=vagrant n=ansible | skipping: [master]
+2024-01-14 03:09:05,175 p=3731 u=vagrant n=ansible | TASK [kubernetes : Add the user 'vagrant' with a specific uid and a primary group of 'docker'] ***
+2024-01-14 03:09:06,247 p=3731 u=vagrant n=ansible | changed: [master]
+2024-01-14 03:09:06,265 p=3731 u=vagrant n=ansible | TASK [kubernetes : Start dockerd] **********************************************
+2024-01-14 03:09:08,186 p=3731 u=vagrant n=ansible | ok: [master]
+2024-01-14 03:09:08,249 p=3731 u=vagrant n=ansible | TASK [kubernetes : Add GlusterFS Repository] ***********************************
+2024-01-14 03:09:27,682 p=3731 u=vagrant n=ansible | changed: [master]
+2024-01-14 03:09:27,729 p=3731 u=vagrant n=ansible | TASK [kubernetes : Install GlusterFS client] ***********************************
+2024-01-14 03:10:05,843 p=3731 u=vagrant n=ansible | changed: [master]
+2024-01-14 03:10:05,860 p=3731 u=vagrant n=ansible | TASK [kubernetes : Set sysctl] *************************************************
+2024-01-14 03:10:06,942 p=3731 u=vagrant n=ansible | changed: [master]
+2024-01-14 03:10:06,979 p=3731 u=vagrant n=ansible | TASK [kubernetes : modprobe br_netfilter] **************************************
+2024-01-14 03:10:07,006 p=3731 u=vagrant n=ansible | skipping: [master]
+2024-01-14 03:10:07,028 p=3731 u=vagrant n=ansible | TASK [kubernetes : sysctl] *****************************************************
+2024-01-14 03:10:07,052 p=3731 u=vagrant n=ansible | skipping: [master]
+2024-01-14 03:10:07,076 p=3731 u=vagrant n=ansible | TASK [kubernetes : install packages needed to use the Kubernetes apt repository] ***
+2024-01-14 03:10:09,685 p=3731 u=vagrant n=ansible | ok: [master]
+2024-01-14 03:10:09,705 p=3731 u=vagrant n=ansible | TASK [kubernetes : add Kubernetes apt-key] *************************************
+2024-01-14 03:10:12,527 p=3731 u=vagrant n=ansible | changed: [master]
+2024-01-14 03:10:12,544 p=3731 u=vagrant n=ansible | TASK [kubernetes : add Kubernetes' APT repository] *****************************
+2024-01-14 03:10:27,482 p=3731 u=vagrant n=ansible | changed: [master]
+2024-01-14 03:10:27,500 p=3731 u=vagrant n=ansible | TASK [kubernetes : Install kubectl] ********************************************
+2024-01-14 03:10:40,873 p=3731 u=vagrant n=ansible | changed: [master]
+2024-01-14 03:10:40,899 p=3731 u=vagrant n=ansible | TASK [kubernetes : Install kubelet] ********************************************
+2024-01-14 03:11:07,852 p=3731 u=vagrant n=ansible | changed: [master]
+2024-01-14 03:11:07,894 p=3731 u=vagrant n=ansible | TASK [kubernetes : Install kubeadm] ********************************************
+2024-01-14 03:11:30,123 p=3731 u=vagrant n=ansible | changed: [master]
+2024-01-14 03:11:30,184 p=3731 u=vagrant n=ansible | TASK [kubernetes : check exisiting /etc/yum.repos.d/kubernetes.repo] ***********
+2024-01-14 03:11:30,963 p=3731 u=vagrant n=ansible | ok: [master]
+2024-01-14 03:11:31,005 p=3731 u=vagrant n=ansible | TASK [kubernetes : install kubernetes.repo] ************************************
+2024-01-14 03:11:31,124 p=3731 u=vagrant n=ansible | skipping: [master]
+2024-01-14 03:11:31,139 p=3731 u=vagrant n=ansible | TASK [kubernetes : install kubelet kubeadm kubectl] ****************************
+2024-01-14 03:11:31,170 p=3731 u=vagrant n=ansible | skipping: [master]
+2024-01-14 03:11:31,218 p=3731 u=vagrant n=ansible | TASK [kubernetes : enable kubelet] *********************************************
+2024-01-14 03:11:32,153 p=3731 u=vagrant n=ansible | ok: [master]
+2024-01-14 03:11:32,228 p=3731 u=vagrant n=ansible | TASK [kubernetes : change 10-kubeadm.conf for v1.11 or later for Ubuntu] *******
+2024-01-14 03:11:32,903 p=3731 u=vagrant n=ansible | changed: [master]
+2024-01-14 03:11:32,922 p=3731 u=vagrant n=ansible | TASK [kubernetes : change kubelet.service for CentOS] **************************
+2024-01-14 03:11:32,950 p=3731 u=vagrant n=ansible | skipping: [master]
+2024-01-14 03:11:32,966 p=3731 u=vagrant n=ansible | TASK [kubernetes : daemon-reload and restart kubelet] **************************
+2024-01-14 03:11:34,508 p=3731 u=vagrant n=ansible | changed: [master]
+2024-01-14 03:11:34,624 p=3731 u=vagrant n=ansible | TASK [master : kubeadm reset v1.11 or later] ***********************************
+2024-01-14 03:11:35,552 p=3731 u=vagrant n=ansible | changed: [master]
+2024-01-14 03:11:35,592 p=3731 u=vagrant n=ansible | TASK [master : kubeadm init for Ubuntu] ****************************************
+2024-01-14 03:11:37,390 p=3731 u=vagrant n=ansible | fatal: [master]: FAILED! => {"changed": true, "cmd": ["kubeadm", "init", "--pod-network-cidr=10.244.0.0/16", "--apiserver-advertise-address=172.16.20.11", "--service-cidr=10.32.0.0/24"], "delta": "0:00:01.382199", "end": "2024-01-14 03:11:37.358212", "msg": "non-zero return code", "rc": 1, "start": "2024-01-14 03:11:35.976013", "stderr": "I0114 03:11:36.613284   12212 version.go:256] remote version is much newer: v1.29.0; falling back to: stable-1.28\nerror execution phase preflight: [preflight] Some fatal errors occurred:\n\t[ERROR CRI]: container runtime is not running: output: time=\"2024-01-14T03:11:37Z\" level=fatal msg=\"validate service connection: CRI v1 runtime API is not implemented for endpoint \\\"unix:///var/run/containerd/containerd.sock\\\": rpc error: code = Unimplemented desc = unknown service runtime.v1.RuntimeService\"\n, error: exit status 1\n[preflight] If you know what you are doing, you can make a check non-fatal with `--ignore-preflight-errors=...`\nTo see the stack trace of this error execute with --v=5 or higher", "stderr_lines": ["I0114 03:11:36.613284   12212 version.go:256] remote version is much newer: v1.29.0; falling back to: stable-1.28", "error execution phase preflight: [preflight] Some fatal errors occurred:", "\t[ERROR CRI]: container runtime is not running: output: time=\"2024-01-14T03:11:37Z\" level=fatal msg=\"validate service connection: CRI v1 runtime API is not implemented for endpoint \\\"unix:///var/run/containerd/containerd.sock\\\": rpc error: code = Unimplemented desc = unknown service runtime.v1.RuntimeService\"", ", error: exit status 1", "[preflight] If you know what you are doing, you can make a check non-fatal with `--ignore-preflight-errors=...`", "To see the stack trace of this error execute with --v=5 or higher"], "stdout": "[init] Using Kubernetes version: v1.28.5\n[preflight] Running pre-flight checks", "stdout_lines": ["[init] Using Kubernetes version: v1.28.5", "[preflight] Running pre-flight checks"]}
+2024-01-14 03:11:37,392 p=3731 u=vagrant n=ansible | PLAY RECAP *********************************************************************
+2024-01-14 03:11:37,392 p=3731 u=vagrant n=ansible | master                     : ok=20   changed=15   unreachable=0    failed=1    skipped=11   rescued=0    ignored=0   

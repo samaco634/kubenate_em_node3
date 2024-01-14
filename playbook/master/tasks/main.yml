@@ -115,35 +115,17 @@
 
 ## Metrics Server 설치
 - name: Install Metrics Server
-  get_url:
-    url: https://github.com/kubernetes-sigs/metrics-server/releases/download/v0.3.6/components.yaml
-    dest: /home/vagrant/metrics-server-deployment.yaml
-    mode: '0644'
-  become_user: vagrant    
-
-- name: add a new line
-  blockinfile:
-    path: /home/vagrant/metrics-server-deployment.yaml
-    insertafter: '        args:'
-    block: |
-           # added lines
-                     - --kubelet-insecure-tls
-                     - --kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname
-  become_user: vagrant
-
-- name: Deploy Metrics Server
-  command: kubectl apply -f /home/vagrant/metrics-server-deployment.yaml
+  command: kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
   become_user: vagrant
   args:
     chdir: /home/vagrant
-  become_user: vagrant
 
 
 ## Dashboard UI 설치 
 #
 - name: Download Dashboard Manifest
   get_url:
-    url: https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0-beta6/aio/deploy/recommended.yaml
+    url: https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/aio/deploy/recommended.yaml
     dest: /home/vagrant/
     mode: '0644'
     owner: vagrant

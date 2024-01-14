@@ -1,3 +1,12 @@
+## containerd restart
+- name: remove config.toml
+  shell: rm /etc/containerd/config.toml
+  when:
+    - ansible_facts.distribution == "Ubuntu"
+- name: containerd restart
+  shell: systemctl restart containerd
+  when:
+    - ansible_facts.distribution == "Ubuntu"  
 ## k8s 마스터 초기화
 #
 - name: "kubeadm reset v1.11 or later"

@@ -55,24 +55,28 @@ $ vagrant ssh master
 <생략>
 
 $ kubectl get node
-NAME     STATUS   ROLES    AGE    VERSION
-master   Ready    master   103s   v1.14.0
-node1    Ready    <none>   67s    v1.14.0
-node2    Ready    <none>   80s    v1.14.0
+NAME     STATUS   ROLES           AGE   VERSION
+master   Ready    control-plane   14m   v1.28.2
+node1    Ready    <none>          21s   v1.28.2
+node2    Ready    <none>          21s   v1.28.2
 
-$ kubectl version --short
-Client Version: v1.14.0
-Server Version: v1.14.0
+$ kubectl version
+Client Version: v1.28.5
+Kustomize Version: v5.0.4-0.20230601165947-6ce0bf390ce3
+Server Version: v1.28.5
 
 $ kubectl get componentstatus
-NAME                 STATUS    MESSAGE             ERROR
-scheduler            Healthy   ok                  
-controller-manager   Healthy   ok                  
-etcd-0               Healthy   {"health":"true"}   
+Warning: v1 ComponentStatus is deprecated in v1.19+
+NAME                 STATUS    MESSAGE   ERROR
+scheduler            Healthy   ok
+controller-manager   Healthy   ok
+etcd-0               Healthy   ok 
 
 $ kubectl cluster-info
-Kubernetes master is running at https://172.16.20.11:6443
-KubeDNS is running at https://172.16.20.11:6443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+Kubernetes control plane is running at https://172.16.20.11:6443
+CoreDNS is running at https://172.16.20.11:6443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+
+To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
 ~~~
 
 
@@ -88,9 +92,9 @@ Windows10의 경우 다음과 같이 환경 변수를 설정하여 kubectl 명�
 C:\Users\Maho\tmp\vagrant-kubernetes>set KUBECONFIG=%CD%\kubeconfig\config
 C:\Users\Maho\tmp\vagrant-kubernetes>kubectl get node
 NAME     STATUS   ROLES    AGE   VERSION
-master   Ready    master   35m   v1.14.3
-node1    Ready    <none>   35m   v1.14.3
-node2    Ready    <none>   35m   v1.14.3
+master   Ready    master   35m   v1.28.2
+node1    Ready    <none>   35m   v1.28.2
+node2    Ready    <none>   35m   v1.28.2
 ~~~
 
 Linux/macOS에서는 git clone으로 만들어진 디렉터리에서 다음 명령어를 실행한다. 
@@ -98,9 +102,9 @@ Linux/macOS에서는 git clone으로 만들어진 디렉터리에서 다음 명�
 imac:k8s_v1.14 maho$ export KUBECONFIG=`pwd`/kubeconfig/config
 imac:k8s_v1.14 maho$ kubectl get node
 NAME     STATUS   ROLES    AGE   VERSION
-master   Ready    master   98s   v1.14.3
-node1    Ready    <none>   76s   v1.14.3
-node2    Ready    <none>   63s   v1.14.3
+master   Ready    master   98s   v1.28.2
+node1    Ready    <none>   76s   v1.28.2
+node2    Ready    <none>   63s   v1.28.2
 ~~~
 
 홈 디렉터리의 .kube에 config를 복사하면 환경 변수 KUBECONFIG를 설정하지 않아도 kubectl을 사용할 수 있게 된다. 

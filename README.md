@@ -134,6 +134,21 @@ vagrant halt
 vagrant destroy -f
 ~~~
 
+## 가상 서버에 접속 하기  
+우분투의 경우 별다른 조치를 취하지 않아도 ssh 접속이 정상적으로 동작했습니다.
+kubenate_em_node3 폴더내에서
+~~~
+vagrant ssh master
+~~~
+로컬 pc내에서 
+~~~
+ssh vagrant@172.16.20.11
+~~~
+
+윈도우즈의 경우 private key를 요구해서 추가해 주어야합니다.
+~~~
+계속...
+~~~
 
 ## Kuberntes DashBoard UI 기동 방법 
 

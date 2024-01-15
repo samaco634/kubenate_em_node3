@@ -113,13 +113,22 @@
   command: kubectl apply -f /home/vagrant/kube-flannel.yml
 
 
+## Metrics Server 다운로드
+#
+- name: Download a manifest of Flannel for k8s ver > 11
+  template:
+    src:  components.yaml
+    dest: /home/vagrant/components.yaml
+    mode: 0644
+    owner: vagrant
+    group: vagrant
+
 ## Metrics Server 설치
 - name: Install Metrics Server
-  command: kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+  command: kubectl apply -f /home/vagrant/components.yaml
   become_user: vagrant
   args:
     chdir: /home/vagrant
-
 
 ## Dashboard UI 설치 
 #
